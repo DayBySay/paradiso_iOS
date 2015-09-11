@@ -14,18 +14,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let URL = NSURL(string: "http://vip.video74000.fc2.com/up/201509/02/Y/x/f42d58f0a56736d1/IMO_10M_001.3gp?st=jNLciJ1LqrtjIIQ5GsDntg&e=1441983600")
+        let URL = NSURL(string: "http://videos2.cdn.xvideos.com/videos/flv/b/5/7/xvideos.com_b572536347e9f90306e4afa89965d101.flv?e=1441995373&ri=1024&rs=85&h=0168c9a9a556723080558040412e1da9")
         if let URL = URL {
             VideoDownloadService.downloadWithURL(URL, destination: { (temporaryURL, response) -> NSURL in
-                return temporaryURL
-            })
-                .progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
-                
+                let fileManager = NSFileManager.defaultManager()
+                let directoryURLs = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+                if directoryURLs.count == 0 {
+                    return temporaryURL
                 }
-                .response { request, response, _, error in
-                    
+                
+                let pathComponent = response.suggestedFilename
+                return directoryURLs[0].URLByAppendingPathComponent(pathComponent!)
+            }).progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
+                print("byte:\(bytesRead) total: \(totalBytesRead) totalExpect: \(totalBytesExpectedToRead)")
+            }.response { request, response, _, error in
+                print(response)
             }
         }
     }
 }
-
