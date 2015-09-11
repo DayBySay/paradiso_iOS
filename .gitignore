@@ -34,6 +34,9 @@ xcuserdata
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
 Pods/
+*.xcworkspace
+!default.xcworkspace
+
 
 # Carthage
 #
@@ -41,3 +44,7 @@ Pods/
 # Carthage/Checkouts
 
 # Carthage/Build
+
+# Bundler
+vendor/
+.bundle/
