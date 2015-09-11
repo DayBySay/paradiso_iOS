@@ -97,12 +97,10 @@
 		3A1B40111BA2E42D00B58877 /* paradiso_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3A1B40421BA305D900B58877 /* SupportingFiles */,
+				3A1B40411BA305CC00B58877 /* View */,
+				3A1B40401BA305C300B58877 /* ViewController */,
 				3A1B40121BA2E42D00B58877 /* AppDelegate.swift */,
-				3A1B40141BA2E42D00B58877 /* ViewController.swift */,
-				3A1B40161BA2E42D00B58877 /* Main.storyboard */,
-				3A1B40191BA2E42D00B58877 /* Assets.xcassets */,
-				3A1B401B1BA2E42D00B58877 /* LaunchScreen.storyboard */,
-				3A1B401E1BA2E42D00B58877 /* Info.plist */,
 			);
 			path = paradiso_iOS;
 			sourceTree = "<group>";
@@ -123,6 +121,32 @@
 				3A1B40341BA2E42D00B58877 /* Info.plist */,
 			);
 			path = paradiso_iOSUITests;
+			sourceTree = "<group>";
+		};
+		3A1B40401BA305C300B58877 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B40141BA2E42D00B58877 /* ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3A1B40411BA305CC00B58877 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B40161BA2E42D00B58877 /* Main.storyboard */,
+				3A1B401B1BA2E42D00B58877 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3A1B40421BA305D900B58877 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B40191BA2E42D00B58877 /* Assets.xcassets */,
+				3A1B401E1BA2E42D00B58877 /* Info.plist */,
+			);
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,6 +505,7 @@
 				3A1B40391BA2E42D00B58877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A1B403A1BA2E42D00B58877 /* Build configuration list for PBXNativeTarget "paradiso_iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +514,7 @@
 				3A1B403C1BA2E42D00B58877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A1B403D1BA2E42D00B58877 /* Build configuration list for PBXNativeTarget "paradiso_iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +523,7 @@
 				3A1B403F1BA2E42D00B58877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
