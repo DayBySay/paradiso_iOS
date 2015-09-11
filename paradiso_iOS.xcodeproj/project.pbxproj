@@ -14,6 +14,7 @@
 		3A1B401D1BA2E42D00B58877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B401B1BA2E42D00B58877 /* LaunchScreen.storyboard */; };
 		3A1B40281BA2E42D00B58877 /* paradiso_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40271BA2E42D00B58877 /* paradiso_iOSTests.swift */; };
 		3A1B40331BA2E42D00B58877 /* paradiso_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40321BA2E42D00B58877 /* paradiso_iOSUITests.swift */; };
+		3A1B40451BA3065F00B58877 /* VideoDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40441BA3065F00B58877 /* VideoDownloadService.swift */; };
 		C7ED81940E8DBAE8D144F7C9 /* Pods_paradiso_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17DA22BE123D30630E45F5BE /* Pods_paradiso_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		3A1B402E1BA2E42D00B58877 /* paradiso_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = paradiso_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1B40321BA2E42D00B58877 /* paradiso_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paradiso_iOSUITests.swift; sourceTree = "<group>"; };
 		3A1B40341BA2E42D00B58877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A1B40441BA3065F00B58877 /* VideoDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownloadService.swift; sourceTree = "<group>"; };
 		8423021C9E06BE877ABDD87D /* Pods-paradiso_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paradiso_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-paradiso_iOS/Pods-paradiso_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		84F57486D04DFDC9F7B58E5D /* Pods-paradiso_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paradiso_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paradiso_iOS/Pods-paradiso_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 				3A1B40311BA2E42D00B58877 /* paradiso_iOSUITests */,
 				3A1B40101BA2E42D00B58877 /* Products */,
 				B21D884E3619DAAE90100AE8 /* Pods */,
+				A07DA9AC973291042DEB1F1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +106,7 @@
 		3A1B40111BA2E42D00B58877 /* paradiso_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3A1B40431BA3063200B58877 /* Service */,
 				3A1B40421BA305D900B58877 /* SupportingFiles */,
 				3A1B40411BA305CC00B58877 /* View */,
 				3A1B40401BA305C300B58877 /* ViewController */,
@@ -153,6 +157,22 @@
 				3A1B401E1BA2E42D00B58877 /* Info.plist */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		3A1B40431BA3063200B58877 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B40441BA3065F00B58877 /* VideoDownloadService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		A07DA9AC973291042DEB1F1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17DA22BE123D30630E45F5BE /* Pods_paradiso_iOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B21D884E3619DAAE90100AE8 /* Pods */ = {
@@ -292,12 +312,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		220D71FE5B949210E96919F0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-paradiso_iOS/Pods-paradiso_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		757035C0FD1201337241E852 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		844182C1DB9A5F950B8282DD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-paradiso_iOS/Pods-paradiso_iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A1B400B1BA2E42D00B58877 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3A1B40151BA2E42D00B58877 /* ViewController.swift in Sources */,
+				3A1B40451BA3065F00B58877 /* VideoDownloadService.swift in Sources */,
 				3A1B40131BA2E42D00B58877 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
