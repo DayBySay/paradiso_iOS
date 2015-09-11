@@ -2,9 +2,11 @@
 # platform :ios, '6.0'
  use_frameworks!
 
-target 'paradiso_iOS' do
+ target 'paradiso_iOS' do
     pod 'Alamofire', '~> 2.0'
-end
+    pod 'Realm', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'swift-2.0'
+    pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'swift-2.0'
+ end
 
 target 'paradiso_iOSTests' do
 
