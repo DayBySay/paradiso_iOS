@@ -67,6 +67,6 @@ class VideoFeedsTableViewController: UITableViewController, UIWebViewDelegate {
         if VideoDownloadService.downloadableURL(request.URL) {
             showVideoDownloadAlertController(request.URL)
         }
-        return !VideoDownloadService.downloadableURL(request.URL)
+        return true
     }
 }
