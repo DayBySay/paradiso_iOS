@@ -149,6 +149,7 @@
 			children = (
 				3A1B40141BA2E42D00B58877 /* ViewController.swift */,
 				3A1B404B1BA3C15800B58877 /* DownloadedVideosTableViewController.swift */,
+				3AF426BC1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -176,7 +177,6 @@
 			children = (
 				3A1B40491BA339D100B58877 /* VideoPersistentService.swift */,
 				3A1B40441BA3065F00B58877 /* VideoDownloadService.swift */,
-				3AF426BC1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift */,
 				3AF426C01BA4227700F22349 /* ConfigurationService.swift */,
 			);
 			name = Service;
