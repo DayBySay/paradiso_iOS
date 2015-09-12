@@ -20,6 +20,11 @@ class VideoPersistentService {
         }
     }
     
+    static func fetchAll() -> Results<Video> {
+        let realm = try! Realm()
+        return realm.objects(Video)
+    }
+    
     static func fetchAll(completionHandler: (results: Results<Video>) -> Void) {
         let realm = try! Realm()
         completionHandler(results: realm.objects(Video))
