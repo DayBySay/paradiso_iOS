@@ -12,7 +12,7 @@ class Video: Object {
     dynamic var id: String = NSUUID().UUIDString
     dynamic var URLString = ""
     dynamic var title = ""
-    var URL: NSURL? {
+    dynamic var URL: NSURL? {
         get {
             return NSURL(string: URLString)
         }
@@ -20,5 +20,9 @@ class Video: Object {
     
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+    override static func ignoredProperties() -> [String] {
+        return ["URL"]
     }
 }
