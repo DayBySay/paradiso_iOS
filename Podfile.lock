@@ -2,6 +2,7 @@ PODS:
   - Alamofire (2.0.0)
   - Bolts/Tasks (1.2.2)
   - KRVideoPlayer (1.0.1)
+  - PageMenu (1.2.8)
   - Parse (1.8.3):
     - Bolts/Tasks (>= 1.2.2)
   - Realm (0.95.0):
@@ -14,6 +15,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 2.0)
   - KRVideoPlayer
+  - PageMenu (from `git@github.com:pittsburgh-studio/PageMenu.git`, branch `swift2.0`)
   - Parse
   - Realm (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
   - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
@@ -21,6 +23,9 @@ DEPENDENCIES:
     commit `9abad6b852b6c2ad19bb3c28532cce53719e2a7f`)
 
 EXTERNAL SOURCES:
+  PageMenu:
+    :branch: swift2.0
+    :git: git@github.com:pittsburgh-studio/PageMenu.git
   Realm:
     :branch: swift-2.0
     :git: https://github.com/realm/realm-cocoa.git
@@ -32,6 +37,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/TransitApp/SVWebViewController.git
 
 CHECKOUT OPTIONS:
+  PageMenu:
+    :commit: 9d062df32ee2ccc719412e129231d7ea4a71f80f
+    :git: git@github.com:pittsburgh-studio/PageMenu.git
   Realm:
     :commit: d9a61d6a65e3fa200ffab8659d2a1806bf620e81
     :git: https://github.com/realm/realm-cocoa.git
@@ -46,6 +54,7 @@ SPEC CHECKSUMS:
   Alamofire: 2f13548b29d25a58ecd91c9225fb51493e2b782b
   Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
   KRVideoPlayer: 08918da1b99cae35fd4c15b2ec2b49358d4c985f
+  PageMenu: 703e82e173f54a4626ab88fcdca7703ee52e0cbe
   Parse: 4b251ac63b76d12b334a32579cc3b174446f0c39
   Realm: 1c28007bd496af94dba8c76d50719164e706a521
   RealmSwift: 9864524dd99c2cb7b4643c29513ef8447fe63724

@@ -9,6 +9,7 @@ platform :ios, '8.0'
     pod 'KRVideoPlayer'
     pod 'SVWebViewController', :git => 'https://github.com/TransitApp/SVWebViewController.git', :commit => '9abad6b852b6c2ad19bb3c28532cce53719e2a7f'
     pod 'Parse'
+    pod 'PageMenu', :git => 'git@github.com:pittsburgh-studio/PageMenu.git', :branch => 'swift2.0'
  end
 
 target 'paradiso_iOSTests' do
