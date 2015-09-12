@@ -10,6 +10,9 @@ import UIKit
 import RealmSwift
 
 class ViewController: UIViewController {
+    @IBOutlet weak var inputURLTextField: UITextField!
+    @IBOutlet weak var downloadButton: UIButton!
+    @IBOutlet weak var progressView: UIProgressView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +35,17 @@ class ViewController: UIViewController {
             return localURL
         }).progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
             print("byte:\(bytesRead) total: \(totalBytesRead) totalExpect: \(totalBytesExpectedToRead)")
+            let rate: Float = Float(totalBytesRead) / Float(totalBytesExpectedToRead)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.progressView.setProgress(rate, animated: true)
+            })
         }
 
+    }
+    
+    @IBAction func touchUpdownloadButton (sender: AnyObject) {
+        if let URLString = inputURLTextField.text, URL = NSURL(string: URLString) {
+            downloadVideoWithURL(URL)
+        }
     }
 }
