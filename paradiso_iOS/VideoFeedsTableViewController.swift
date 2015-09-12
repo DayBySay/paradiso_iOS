@@ -31,6 +31,7 @@ class VideoFeedsTableViewController: UITableViewController, UIWebViewDelegate {
         }).progress {bytesRead, totalBytesRead, totalBytesExpectedToRead in
                 print("byte:\(bytesRead) total: \(totalBytesRead) totalExpect: \(totalBytesExpectedToRead)")
         }}))
+        alertController.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: {})
     }
