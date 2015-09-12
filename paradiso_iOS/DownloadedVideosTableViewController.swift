@@ -8,8 +8,11 @@
 
 import UIKit
 import RealmSwift
+import KRVideoPlayer
 
 class DownloadedVideosTableViewController: UITableViewController {
+    lazy var videoController = KRVideoPlayerController(frame: CGRect(x: 0, y: 0, width: 320, height: 300))
+    
     var videos: Results<Video> {
         get {
             return VideoPersistentService.fetchAll()
@@ -39,6 +42,12 @@ class DownloadedVideosTableViewController: UITableViewController {
         let video = videos[indexPath.row]
         cell.textLabel?.text = video.title
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let video = videos[indexPath.row]
+        videoController.contentURL = video.URL
+        videoController.showInWindow()
     }
 
     /*
