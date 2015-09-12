@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
 
@@ -14,12 +15,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    func downloadVideoWithURL(URL: NSURL) {
+        VideoDownloadService.downloadWithURL(URL, destination: { (temporaryURL, response) -> NSURL in
+            let fileManager = NSFileManager.defaultManager()
+            let directoryURLs = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+            if directoryURLs.count == 0 {
+                return temporaryURL
+            }
+            
+            let pathComponent = response.suggestedFilename
+            let localURL: NSURL = directoryURLs[0].URLByAppendingPathComponent(pathComponent!)
+            
+            VideoPersistentService.saveVideoWithURL(localURL, title: URL.absoluteString)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            return localURL
+        }).progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
+            print("byte:\(bytesRead) total: \(totalBytesRead) totalExpect: \(totalBytesExpectedToRead)")
+        }
+
     }
-
-
 }
-
