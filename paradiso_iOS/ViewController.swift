@@ -20,19 +20,7 @@ class ViewController: UIViewController {
     }
     
     func downloadVideoWithURL(URL: NSURL) {
-        VideoDownloadService.downloadWithURL(URL, destination: { (temporaryURL, response) -> NSURL in
-            let fileManager = NSFileManager.defaultManager()
-            let directoryURLs = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-            if directoryURLs.count == 0 {
-                return temporaryURL
-            }
-            
-            let pathComponent = response.suggestedFilename
-            let localURL: NSURL = directoryURLs[0].URLByAppendingPathComponent(pathComponent!)
-            
-            VideoPersistentService.saveVideoWithURL(localURL, title: URL.absoluteString)
-
-            return localURL
+        VideoDownloadService.downloadWithURL(URL, downloadCompletionHandler: { fileURL, success in
         }).progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
             print("byte:\(bytesRead) total: \(totalBytesRead) totalExpect: \(totalBytesExpectedToRead)")
             let rate: Float = Float(totalBytesRead) / Float(totalBytesExpectedToRead)

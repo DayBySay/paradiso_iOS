@@ -12,8 +12,21 @@ import Parse
 
 class VideoDownloadService {
     
-    static func downloadWithURL(URL: NSURL, destination: Request.DownloadFileDestination) -> Request {
-        return Alamofire.download(.GET, URL, destination: destination)
+    static func downloadWithURL(URL: NSURL, downloadCompletionHandler: ((fileURL: NSURL, success: Bool) -> Void)) -> Request {
+        return Alamofire.download(.GET, URL) { (temporaryURL, response) -> NSURL in
+            let fileManager = NSFileManager.defaultManager()
+            let directoryURLs = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+            if directoryURLs.count == 0 {
+                downloadCompletionHandler(fileURL: temporaryURL, success: false)
+                return temporaryURL
+            }
+            
+            let pathComponent = response.suggestedFilename
+            let localURL: NSURL = directoryURLs[0].URLByAppendingPathComponent(pathComponent!)
+            VideoPersistentService.saveVideoWithURL(localURL, title: URL.absoluteString)
+            downloadCompletionHandler(fileURL: localURL, success: true)
+            return localURL
+        }
     }
     
     static func downloadableURL(URL: NSURL!) -> Bool {

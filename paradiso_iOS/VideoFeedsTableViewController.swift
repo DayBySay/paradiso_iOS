@@ -27,8 +27,10 @@ class VideoFeedsTableViewController: UITableViewController, UIWebViewDelegate {
     func showVideoDownloadAlertController(downloadbleURL: NSURL!) {
         let alertController = UIAlertController(title: "", message: "ダウンロード可能です", preferredStyle: .ActionSheet)
         alertController.addAction(UIAlertAction(title: "ダウンロード", style: .Default, handler: { action in
-            VideoDownloadService.downloadableURL(downloadbleURL)
-        }))
+            VideoDownloadService.downloadWithURL(downloadbleURL, downloadCompletionHandler: { fileURL, success in
+        }).progress {bytesRead, totalBytesRead, totalBytesExpectedToRead in
+                print("byte:\(bytesRead) total: \(totalBytesRead) totalExpect: \(totalBytesExpectedToRead)")
+        }}))
         
         self.presentViewController(alertController, animated: true, completion: {})
     }
