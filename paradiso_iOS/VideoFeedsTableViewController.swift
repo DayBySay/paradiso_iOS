@@ -10,7 +10,11 @@ import UIKit
 import SVWebViewController
 
 class VideoFeedsTableViewController: UITableViewController, UIWebViewDelegate {
-    let videofeeds: [String] = ["http://jp.xvideos.com/video4234045/an_asian_girl_is_sitting_on_a_bed_playing_with_her_from_http_alljapanese.net" ,"http://jp.xvideos.com/video14375503/siro-2465_3min", "http://jp.xvideos.com/video10236100/blowjob_1_15_2015"]
+    let videofeeds: [String] = [
+        "http://jp.xvideos.com/video4234045/an_asian_girl_is_sitting_on_a_bed_playing_with_her_from_http_alljapanese.net",
+        "http://video.fc2.com/a/content/20150816e1ZrXrp9&t_aswell",
+        "http://asg.to/contentsPage.html?mcd=jZxtyNShVwx7vIaa",
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
