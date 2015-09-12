@@ -44,7 +44,6 @@ class VideoDownloadService {
                 let text = object["text"] as! String
                 return text
             }
-            NSLog("%@", whitelist)
             NSUserDefaults.standardUserDefaults().setObject(whitelist, forKey: Key.whitelist.rawValue)
         }
     }
