@@ -15,6 +15,8 @@
 		3A1B40281BA2E42D00B58877 /* paradiso_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40271BA2E42D00B58877 /* paradiso_iOSTests.swift */; };
 		3A1B40331BA2E42D00B58877 /* paradiso_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40321BA2E42D00B58877 /* paradiso_iOSUITests.swift */; };
 		3A1B40451BA3065F00B58877 /* VideoDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40441BA3065F00B58877 /* VideoDownloadService.swift */; };
+		3A1B40481BA331C700B58877 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40471BA331C700B58877 /* Video.swift */; settings = {ASSET_TAGS = (); }; };
+		3A1B404A1BA339D100B58877 /* VideoPersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40491BA339D100B58877 /* VideoPersistentService.swift */; settings = {ASSET_TAGS = (); }; };
 		C7ED81940E8DBAE8D144F7C9 /* Pods_paradiso_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17DA22BE123D30630E45F5BE /* Pods_paradiso_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		3A1B40321BA2E42D00B58877 /* paradiso_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paradiso_iOSUITests.swift; sourceTree = "<group>"; };
 		3A1B40341BA2E42D00B58877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A1B40441BA3065F00B58877 /* VideoDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownloadService.swift; sourceTree = "<group>"; };
+		3A1B40471BA331C700B58877 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		3A1B40491BA339D100B58877 /* VideoPersistentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPersistentService.swift; sourceTree = "<group>"; };
 		8423021C9E06BE877ABDD87D /* Pods-paradiso_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paradiso_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-paradiso_iOS/Pods-paradiso_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		84F57486D04DFDC9F7B58E5D /* Pods-paradiso_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paradiso_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paradiso_iOS/Pods-paradiso_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +110,7 @@
 		3A1B40111BA2E42D00B58877 /* paradiso_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3A1B40461BA3312800B58877 /* Model */,
 				3A1B40431BA3063200B58877 /* Service */,
 				3A1B40421BA305D900B58877 /* SupportingFiles */,
 				3A1B40411BA305CC00B58877 /* View */,
@@ -162,9 +167,18 @@
 		3A1B40431BA3063200B58877 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				3A1B40491BA339D100B58877 /* VideoPersistentService.swift */,
 				3A1B40441BA3065F00B58877 /* VideoDownloadService.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		3A1B40461BA3312800B58877 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B40471BA331C700B58877 /* Video.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		A07DA9AC973291042DEB1F1C /* Frameworks */ = {
@@ -365,7 +379,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1B404A1BA339D100B58877 /* VideoPersistentService.swift in Sources */,
 				3A1B40151BA2E42D00B58877 /* ViewController.swift in Sources */,
+				3A1B40481BA331C700B58877 /* Video.swift in Sources */,
 				3A1B40451BA3065F00B58877 /* VideoDownloadService.swift in Sources */,
 				3A1B40131BA2E42D00B58877 /* AppDelegate.swift in Sources */,
 			);

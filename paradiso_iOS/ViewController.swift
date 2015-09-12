@@ -27,14 +27,8 @@ class ViewController: UIViewController {
             let pathComponent = response.suggestedFilename
             let localURL: NSURL = directoryURLs[0].URLByAppendingPathComponent(pathComponent!)
             
-            let video = Video()
-            video.title = URL.absoluteString
-            video.URLString = localURL.absoluteString
-            let realm = try! Realm()
-            try! realm.write {
-                realm.add(video)
-            }
-            
+            VideoPersistentService.saveVideoWithURL(localURL, title: URL.absoluteString)
+
             return localURL
         }).progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
             print("byte:\(bytesRead) total: \(totalBytesRead) totalExpect: \(totalBytesExpectedToRead)")
