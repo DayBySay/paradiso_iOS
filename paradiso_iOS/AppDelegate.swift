@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        setupParse(launchOptions)
+        VideoDownloadService.downloadWhitelist()
         return true
     }
 
@@ -41,6 +43,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // MARK: - Setup
+    
+    func setupParse(launchOptions: [NSObject: AnyObject]?) {
+        let applivationID = ConfigurationService.ParseConfiguration.ApplicationID.rawValue
+        let clientKey = ConfigurationService.ParseConfiguration.ClientKey.rawValue
+        if applivationID.characters.count == 0 || clientKey.characters.count == 0 {
+            return
+        }
+        
+        Parse.setApplicationId(applivationID, clientKey: clientKey)
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+    }
 }
 
