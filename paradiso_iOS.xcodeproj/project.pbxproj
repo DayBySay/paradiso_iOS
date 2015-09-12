@@ -18,6 +18,7 @@
 		3A1B40481BA331C700B58877 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40471BA331C700B58877 /* Video.swift */; settings = {ASSET_TAGS = (); }; };
 		3A1B404A1BA339D100B58877 /* VideoPersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40491BA339D100B58877 /* VideoPersistentService.swift */; settings = {ASSET_TAGS = (); }; };
 		3A1B404C1BA3C15800B58877 /* DownloadedVideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B404B1BA3C15800B58877 /* DownloadedVideosTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3AF426BD1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF426BC1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C7ED81940E8DBAE8D144F7C9 /* Pods_paradiso_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17DA22BE123D30630E45F5BE /* Pods_paradiso_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		3A1B40471BA331C700B58877 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		3A1B40491BA339D100B58877 /* VideoPersistentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPersistentService.swift; sourceTree = "<group>"; };
 		3A1B404B1BA3C15800B58877 /* DownloadedVideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadedVideosTableViewController.swift; sourceTree = "<group>"; };
+		3AF426BC1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFeedsTableViewController.swift; sourceTree = "<group>"; };
 		8423021C9E06BE877ABDD87D /* Pods-paradiso_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paradiso_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-paradiso_iOS/Pods-paradiso_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		84F57486D04DFDC9F7B58E5D /* Pods-paradiso_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paradiso_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paradiso_iOS/Pods-paradiso_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +174,7 @@
 			children = (
 				3A1B40491BA339D100B58877 /* VideoPersistentService.swift */,
 				3A1B40441BA3065F00B58877 /* VideoDownloadService.swift */,
+				3AF426BC1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				3A1B40481BA331C700B58877 /* Video.swift in Sources */,
 				3A1B40451BA3065F00B58877 /* VideoDownloadService.swift in Sources */,
 				3A1B404C1BA3C15800B58877 /* DownloadedVideosTableViewController.swift in Sources */,
+				3AF426BD1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift in Sources */,
 				3A1B40131BA2E42D00B58877 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
