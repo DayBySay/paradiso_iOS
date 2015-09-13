@@ -14,7 +14,9 @@ class Video: Object {
     dynamic var title = ""
     dynamic var URL: NSURL? {
         get {
-            return NSURL(string: URLString)
+            let fileManager = NSFileManager.defaultManager()
+            let directoryURLs = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+            return directoryURLs[0].URLByAppendingPathComponent(URLString)
         }
     }
     

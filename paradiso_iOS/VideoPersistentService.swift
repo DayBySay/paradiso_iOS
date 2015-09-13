@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 class VideoPersistentService {
-    static func saveVideoWithURL(URL: NSURL, title: String) {
+    static func saveVideo(fileName: String, title: String) {
         let video = Video()
-        video.title = URL.absoluteString
-        video.URLString = URL.absoluteString
+        video.title = fileName
+        video.URLString = fileName
         let realm = try! Realm()
         try! realm.write {
             realm.add(video)

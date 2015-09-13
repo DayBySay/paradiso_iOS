@@ -21,9 +21,9 @@ class VideoDownloadService {
                 return temporaryURL
             }
             
-            let pathComponent = response.suggestedFilename
-            let localURL: NSURL = directoryURLs[0].URLByAppendingPathComponent(pathComponent!)
-            VideoPersistentService.saveVideoWithURL(localURL, title: URL.absoluteString)
+            let fileName = response.suggestedFilename!
+            let localURL: NSURL = directoryURLs[0].URLByAppendingPathComponent(fileName)
+            VideoPersistentService.saveVideo(fileName, title: fileName)
             downloadCompletionHandler(fileURL: localURL, success: true)
             return localURL
         }
@@ -68,7 +68,7 @@ class VideoDownloadService {
     // MARK: - local video
     
     static func removeFile(URL: NSURL) {
-        let fileManager = NSFileManager()
+        let fileManager = NSFileManager.defaultManager()
         try! fileManager.removeItemAtURL(URL)
     }
 }

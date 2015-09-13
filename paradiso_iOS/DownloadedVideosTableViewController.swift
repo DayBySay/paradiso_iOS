@@ -66,10 +66,10 @@ class DownloadedVideosTableViewController: UITableViewController, ParadisoPageMe
         if editingStyle == .Delete {
             // Delete the row from the data source
             let video = videos[indexPath.row]
-            VideoPersistentService.deleteVideoWithID(video.id)
             if let URL = video.URL {
                 VideoDownloadService.removeFile(URL)                
             }
+            VideoPersistentService.deleteVideoWithID(video.id)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
