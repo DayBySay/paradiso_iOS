@@ -9,7 +9,12 @@
 import UIKit
 import PageMenu
 
-class PageMenuBaseViewController: UIViewController {
+ @objc protocol ParadisoPageMenuDelegate {
+    func menuTitle() -> String
+    func pageMenu(pageMenu: CAPSPageMenu, didTouchUpRightBarButton: UIBarButtonItem)
+}
+
+class PageMenuBaseViewController: UIViewController, CAPSPageMenuDelegate {
     var pageMenu :CAPSPageMenu?
     
     override func viewDidAppear(animated: Bool) {
@@ -22,6 +27,8 @@ class PageMenuBaseViewController: UIViewController {
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Done, target: self, action: "didTapRightMenu")
         
         // MARK: - Scroll menu setup
         
@@ -48,11 +55,25 @@ class PageMenuBaseViewController: UIViewController {
         
         // Initialize scroll menu
         pageMenu = CAPSPageMenu(viewControllers: controllers, frame: CGRectMake(0.0, 0.0, self.view.frame.width, self.view.frame.height), pageMenuOptions: parameters)
+        pageMenu?.delegate = self
         
         self.addChildViewController(pageMenu!)
         self.view.addSubview(pageMenu!.view)
         
         pageMenu!.didMoveToParentViewController(self)
+    }
+    
+    func didTapRightMenu() {
+        guard let currentPageIndex = pageMenu?.currentPageIndex else {
+            return
+        }
+        
+        let controller = pageMenu?.controllerArray[currentPageIndex]
+        
+        if controller is ParadisoPageMenuDelegate {
+            let implements = controller as! ParadisoPageMenuDelegate
+            implements.pageMenu(pageMenu!, didTouchUpRightBarButton: self.navigationItem.rightBarButtonItem!)
+        }
     }
     
     // MARK: - Container View Controller
@@ -62,5 +83,14 @@ class PageMenuBaseViewController: UIViewController {
     
     override func shouldAutomaticallyForwardRotationMethods() -> Bool {
         return true
+    }
+    
+    // MARK: - CAPSPageMenuDelegate
+    func didMoveToPage(controller: UIViewController, index: Int) {
+        if controller is ParadisoPageMenuDelegate {
+            let implemented = controller as! ParadisoPageMenuDelegate
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: implemented.menuTitle(), style: UIBarButtonItemStyle.Done, target: self, action: "didTapRightMenu")
+
+        }
     }
 }

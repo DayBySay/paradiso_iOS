@@ -64,4 +64,11 @@ class VideoDownloadService {
     private enum Key: String {
         case whitelist = "VideoDownloadServiceWhitelist"
     }
+    
+    // MARK: - local video
+    
+    static func removeFile(URL: NSURL) {
+        let fileManager = NSFileManager()
+        try! fileManager.removeItemAtURL(URL)
+    }
 }

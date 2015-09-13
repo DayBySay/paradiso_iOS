@@ -15,7 +15,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 2.0)
   - KRVideoPlayer
-  - PageMenu (from `git@github.com:pittsburgh-studio/PageMenu.git`, branch `swift2.0`)
+  - PageMenu (from `git@github.com:DayBySay/PageMenu.git`, branch `swift2.0`)
   - Parse
   - Realm (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
   - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
@@ -25,7 +25,7 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   PageMenu:
     :branch: swift2.0
-    :git: git@github.com:pittsburgh-studio/PageMenu.git
+    :git: git@github.com:DayBySay/PageMenu.git
   Realm:
     :branch: swift-2.0
     :git: https://github.com/realm/realm-cocoa.git
@@ -38,8 +38,8 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PageMenu:
-    :commit: 9d062df32ee2ccc719412e129231d7ea4a71f80f
-    :git: git@github.com:pittsburgh-studio/PageMenu.git
+    :commit: fb12124327a1252d3117686c51d83d685b3d3945
+    :git: git@github.com:DayBySay/PageMenu.git
   Realm:
     :commit: d9a61d6a65e3fa200ffab8659d2a1806bf620e81
     :git: https://github.com/realm/realm-cocoa.git

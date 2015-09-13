@@ -20,6 +20,15 @@ class VideoPersistentService {
         }
     }
     
+    static func deleteVideoWithID(id: String) {
+        let realm = try! Realm()
+        let video = realm.objects(Video).filter("id = %@", id)
+        
+        try! realm.write { ()
+            realm.delete(video)
+        }
+    }
+    
     static func fetchAll() -> Results<Video> {
         let realm = try! Realm()
         return realm.objects(Video)
