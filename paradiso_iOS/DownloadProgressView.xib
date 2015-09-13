@@ -15,7 +15,7 @@
                     <rect key="frame" x="20" y="24" width="560" height="2"/>
                 </progressView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="7Ey-I0-BPq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="duK-Bl-v3f"/>
                 <constraint firstItem="7Ey-I0-BPq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hyK-7i-wlv"/>
@@ -25,7 +25,7 @@
             <connections>
                 <outlet property="progressView" destination="7Ey-I0-BPq" id="7RR-Cf-7Xl"/>
             </connections>
-            <point key="canvasLocation" x="369.5" y="263"/>
+            <point key="canvasLocation" x="165" y="279"/>
         </view>
     </objects>
 </document>
