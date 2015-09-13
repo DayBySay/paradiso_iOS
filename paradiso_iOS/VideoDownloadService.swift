@@ -12,6 +12,7 @@ import Parse
 
 class VideoDownloadService {
     
+    // MARK: - download videos
     static func downloadWithURL(URL: NSURL, downloadCompletionHandler: ((fileURL: NSURL, success: Bool) -> Void)) -> Request {
         return Alamofire.download(.GET, URL) { (temporaryURL, response) -> NSURL in
             let fileManager = NSFileManager.defaultManager()
@@ -42,6 +43,8 @@ class VideoDownloadService {
         
         return false
     }
+    
+    // MARK: - whitelist
     
      static private func whitelist() -> [String] {
         guard let whitelist = NSUserDefaults.standardUserDefaults().arrayForKey(Key.whitelist.rawValue) else {
