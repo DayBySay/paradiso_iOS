@@ -11,7 +11,7 @@ import PageMenu
 
  @objc protocol ParadisoPageMenuDelegate {
     func menuTitle() -> String
-    func pageMenu(pageMenu: CAPSPageMenu, didTouchUpRightBarButton: UIBarButtonItem)
+    func pageMenu(pageMenu: CAPSPageMenu, didTouchUpRightBarButton: UIBarButtonItem) -> String?
 }
 
 class PageMenuBaseViewController: UIViewController, CAPSPageMenuDelegate {
@@ -72,7 +72,10 @@ class PageMenuBaseViewController: UIViewController, CAPSPageMenuDelegate {
         
         if controller is ParadisoPageMenuDelegate {
             let implements = controller as! ParadisoPageMenuDelegate
-            implements.pageMenu(pageMenu!, didTouchUpRightBarButton: self.navigationItem.rightBarButtonItem!)
+            let buttonTitle = implements.pageMenu(pageMenu!, didTouchUpRightBarButton: self.navigationItem.rightBarButtonItem!)
+            if let buttonTitle = buttonTitle {
+                self.navigationItem.rightBarButtonItem?.title = buttonTitle
+            }
         }
     }
     

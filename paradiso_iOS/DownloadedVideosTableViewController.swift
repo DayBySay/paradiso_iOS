@@ -80,7 +80,8 @@ class DownloadedVideosTableViewController: UITableViewController, ParadisoPageMe
         return self.tableView.editing ? "Done" : "Edit"
     }
     
-    func pageMenu(pageMenu: CAPSPageMenu, didTouchUpRightBarButton: UIBarButtonItem) {
+    func pageMenu(pageMenu: CAPSPageMenu, didTouchUpRightBarButton: UIBarButtonItem) -> String? {
         self.tableView.setEditing(!self.tableView.editing, animated: true)
+        return self.tableView.editing ? "Done" : "Edit"
     }
 }
