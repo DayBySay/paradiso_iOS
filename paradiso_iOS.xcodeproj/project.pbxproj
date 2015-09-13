@@ -18,6 +18,8 @@
 		3A1B404A1BA339D100B58877 /* VideoPersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B40491BA339D100B58877 /* VideoPersistentService.swift */; settings = {ASSET_TAGS = (); }; };
 		3A1B404C1BA3C15800B58877 /* DownloadedVideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B404B1BA3C15800B58877 /* DownloadedVideosTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		3AE2B2121BA45BE100B575F7 /* PageMenuBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2B2111BA45BE100B575F7 /* PageMenuBaseViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3AE2B21A1BA493A400B575F7 /* DownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2B2191BA493A400B575F7 /* DownloadProgressView.swift */; settings = {ASSET_TAGS = (); }; };
+		3AE2B21C1BA493BC00B575F7 /* DownloadProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE2B21B1BA493BC00B575F7 /* DownloadProgressView.xib */; settings = {ASSET_TAGS = (); }; };
 		3AF426BD1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF426BC1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		3AF426C11BA4227700F22349 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF426C01BA4227700F22349 /* ConfigurationService.swift */; settings = {ASSET_TAGS = (); }; };
 		C7ED81940E8DBAE8D144F7C9 /* Pods_paradiso_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17DA22BE123D30630E45F5BE /* Pods_paradiso_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -59,6 +61,8 @@
 		3A1B40491BA339D100B58877 /* VideoPersistentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPersistentService.swift; sourceTree = "<group>"; };
 		3A1B404B1BA3C15800B58877 /* DownloadedVideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadedVideosTableViewController.swift; sourceTree = "<group>"; };
 		3AE2B2111BA45BE100B575F7 /* PageMenuBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMenuBaseViewController.swift; sourceTree = "<group>"; };
+		3AE2B2191BA493A400B575F7 /* DownloadProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadProgressView.swift; sourceTree = "<group>"; };
+		3AE2B21B1BA493BC00B575F7 /* DownloadProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadProgressView.xib; sourceTree = "<group>"; };
 		3AF426BC1BA3FE7C00F22349 /* VideoFeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFeedsTableViewController.swift; sourceTree = "<group>"; };
 		3AF426C01BA4227700F22349 /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
 		8423021C9E06BE877ABDD87D /* Pods-paradiso_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paradiso_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-paradiso_iOS/Pods-paradiso_iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			children = (
 				3A1B40161BA2E42D00B58877 /* Main.storyboard */,
 				3A1B401B1BA2E42D00B58877 /* LaunchScreen.storyboard */,
+				3AE2B2191BA493A400B575F7 /* DownloadProgressView.swift */,
+				3AE2B21B1BA493BC00B575F7 /* DownloadProgressView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1B401D1BA2E42D00B58877 /* LaunchScreen.storyboard in Resources */,
+				3AE2B21C1BA493BC00B575F7 /* DownloadProgressView.xib in Resources */,
 				3A1B401A1BA2E42D00B58877 /* Assets.xcassets in Resources */,
 				3A1B40181BA2E42D00B58877 /* Main.storyboard in Resources */,
 			);
@@ -390,6 +397,7 @@
 			files = (
 				3AF426C11BA4227700F22349 /* ConfigurationService.swift in Sources */,
 				3A1B404A1BA339D100B58877 /* VideoPersistentService.swift in Sources */,
+				3AE2B21A1BA493A400B575F7 /* DownloadProgressView.swift in Sources */,
 				3A1B40481BA331C700B58877 /* Video.swift in Sources */,
 				3A1B40451BA3065F00B58877 /* VideoDownloadService.swift in Sources */,
 				3A1B404C1BA3C15800B58877 /* DownloadedVideosTableViewController.swift in Sources */,
